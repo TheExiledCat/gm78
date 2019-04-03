@@ -41,6 +41,12 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.position, mtw.point, 10, 0));
+        float dist = Vector3.Distance(transform.position, mtw.point);
+        if(dist >= 1f)
+        {
+            transform.LookAt(mtw.point);
+        }
+        
+        
     }
 }
