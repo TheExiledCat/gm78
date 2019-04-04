@@ -5,20 +5,22 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     MouseToWorld mtw;
+    
     Rigidbody rb;
-    public GameObject goGun;
+    
     float fMoveInX;
     float fMoveInY;
     float ms = 10;
     float fLookAngle;
-    bool bHasGun=false;
+    
     bool bIsSuper = false;
     bool bIsAlive = false;
-    
+    int ammo = 5;
     Vector2 v2MousePos;
     // Start is called before the first frame update
     void Start()
     {
+        
         mtw = GetComponent<MouseToWorld>();
         bIsAlive = true;//set player to be alive
         rb = GetComponent<Rigidbody>();//get ridgidbody into rb var
@@ -38,6 +40,7 @@ public class Movement : MonoBehaviour
         rb.velocity = new Vector3(fMoveInX * ms, 0, fMoveInY*ms);//movement oneliner
         Debug.Log(v2MousePos);
         
+        
     }
     private void FixedUpdate()
     {
@@ -46,6 +49,7 @@ public class Movement : MonoBehaviour
         {
             transform.LookAt(mtw.point);
         }
+        transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
         
         
     }

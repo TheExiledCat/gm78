@@ -18,7 +18,7 @@ public class MouseToWorld : MonoBehaviour
         
         if (Physics.Raycast(ray,out hit,ground)){
             Debug.DrawRay(ray.origin, ray.direction*10, Color.red);
-            Debug.Log(hit.point);
+            //Debug.Log(hit.point);
             point = hit.point;
         }
 
