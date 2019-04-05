@@ -27,18 +27,21 @@ public class Shooting : MonoBehaviour
             if (ammo > 0)
             {
                 ammo--;
-                Instantiate(bullet, transform.position, transform.rotation);
+                Instantiate(bullet, transform.position, transform.rotation);//shoot bullet
             }
-            else if (ammo <= 0)
+            else if (ammo == 0)
             {
-               
-                
+
+                reloadTime = 120;//start reload 
+                ammo=-1;
                 
                 Debug.Log("COVER ME IM RELOADING");
                 
             }
             
-            if (reloadTime == 0)
+            
+        }
+        if (reloadTime == 0)//check if reloading is done and then reset ammo
             {
                 ammo = 10;
             }
@@ -46,7 +49,6 @@ public class Shooting : MonoBehaviour
             {
                 reloadTime--;
             }
-        }
             
         
     }

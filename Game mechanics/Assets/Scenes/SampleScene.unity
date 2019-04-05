@@ -187,6 +187,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4232365195511656395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &485896210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485896202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cec86b2575d22e4e9dc2cc82ef4f6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 10
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,12 +309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 485896202}
---- !u!1 &830637236 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4232365196473470046, guid: 333fbbb09e5b9d64a9b9f2025894beff,
-    type: 3}
-  m_PrefabInstance: {fileID: 4232365195511656395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496606409
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,10 +468,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4232365195856764864, guid: 333fbbb09e5b9d64a9b9f2025894beff,
-        type: 3}
-      propertyPath: goGun
-      value: 
-      objectReference: {fileID: 830637236}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333fbbb09e5b9d64a9b9f2025894beff, type: 3}
