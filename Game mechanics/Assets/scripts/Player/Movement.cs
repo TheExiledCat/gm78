@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Confined;
         mtw = GetComponent<MouseToWorld>();
         bIsAlive = true;//set player to be alive
         rb = GetComponent<Rigidbody>();//get ridgidbody into rb var

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveToPlayer : MonoBehaviour
 {
     GameObject player;
-    float ms = 10;
+    float ms = 7;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
