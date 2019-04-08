@@ -6,13 +6,17 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField]
     int ammo = 10;
-
+    AudioSource shot;
+    
+    AudioClip reload;
     Object bullet;
     int reloadTime =-1;
     bool isReloading = false;
     // Start is called before the first frame update
     void Start()
     {
+        reload = Resources.Load<AudioClip>("reload");
+        shot = GetComponent<AudioSource>();
         bullet = Resources.Load("bullet");
     }
 
@@ -28,6 +32,7 @@ public class Shooting : MonoBehaviour
             {
                 ammo--;
                 Instantiate(bullet, transform.position, transform.rotation);//shoot bullet
+                shot.Play();
             }
             else if (ammo == 0)
             {
@@ -36,7 +41,7 @@ public class Shooting : MonoBehaviour
                 ammo=-1;
                 
                 Debug.Log("COVER ME IM RELOADING");
-                
+                shot.PlayOneShot(reload);
             }
             
             
@@ -52,4 +57,5 @@ public class Shooting : MonoBehaviour
             
         
     }
+    
 }

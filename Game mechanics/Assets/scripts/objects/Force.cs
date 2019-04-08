@@ -15,6 +15,17 @@ public class Force : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
         transform.position += transform.forward * ms;
     }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            collision.gameObject.GetComponent<Death>().hp -= 20;
+            Destroy(gameObject);
+            Debug.Log("hit");
+        }
+    }
+
 }
