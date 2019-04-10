@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death : MonoBehaviour
+public class Transpose : MonoBehaviour
 {
-    GameObject player;
-    
-    [HideInInspector]
-    public int hp;
     // Start is called before the first frame update
     void Start()
     {
-        
-        player = Resources.Load<GameObject>("Player");
-        hp =  100;
-        
+        transform.eulerAngles= new Vector3(-90, -90, 0);
     }
 
     // Update is called once per frame
-
+    void Update()
+    {
+        
+    }
 }
