@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+    public delegate void Hit();
+    public static event Hit OnHit; 
     AudioSource source;
     public int wave = 1;
     GameObject creeper;
@@ -33,7 +35,7 @@ public class Spawn : MonoBehaviour
             {   Instantiate(Resources.Load("fire"), creepers[i].transform.position + Vector3.up, Quaternion.identity);
                 Destroy(creepers[i]);
                 creepers.Remove(creepers[i]);
-                
+                OnHit();
                 
                 
                 source.PlayOneShot(Resources.Load<AudioClip>("explosion"));
@@ -46,6 +48,7 @@ public class Spawn : MonoBehaviour
             NextWave();
         }
     }
+   
     private void NextWave()
     {
         wave++;

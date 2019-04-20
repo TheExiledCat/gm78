@@ -17,11 +17,21 @@ public class MoveToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform.position);
         
     }
     private void FixedUpdate()
     {
+        if (!player.GetComponent<Movement>().bIsSuper)
+        {
+            transform.LookAt(player.transform.position);
+
+        }
+        else
+        {
+            transform.LookAt(2 * transform.position - player.transform.position);
+
+        }
+        
         rb.position += transform.forward * ms*Time.deltaTime;
     }
 }

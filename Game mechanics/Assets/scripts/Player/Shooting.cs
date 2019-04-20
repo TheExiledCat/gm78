@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField]
-    int ammo = 10;
+    public int ammo = 10;
     AudioSource shot;
     
     AudioClip reload;
